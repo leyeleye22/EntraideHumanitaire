@@ -10,7 +10,7 @@ class Projet extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre', 'description', 'image', 'status'];
+    protected $fillable = ['titre', 'description', 'image', 'status', 'user_id'];
 
     /**
      * @var relationship

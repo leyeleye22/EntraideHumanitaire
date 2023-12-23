@@ -19,6 +19,7 @@
 
     <div class="mt-10 md:mt-0 md:col-span-2">
         <form action="#" method="POST">
+            @crsf
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-2 py-8 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">

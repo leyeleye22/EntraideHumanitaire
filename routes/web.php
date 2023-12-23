@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,9 @@ Route::get('/ajouter/projet', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/projet', function () {
-    return view('Admin.Projet');
-});
+// route pour le CRUD des projet ici n'oublie pas de mettre le middleware pour la protégée
+Route::resource('projet', ProjetController::class);
+
 Route::get('admin/connect/association', function () {
     return view('ConnexionAdmin');
 });

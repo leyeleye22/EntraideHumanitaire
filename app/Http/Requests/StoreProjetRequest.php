@@ -15,12 +15,12 @@ class StoreProjetRequest extends FormRequest
         return true;
     }
 
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'administrateur_id' => Auth::user()->id,
-        ]);
-    }
+    // protected function prepareForValidation()
+    // {
+    //     $this->merge([
+    //         'administrateur_id' => Auth::user()->id,
+    //     ]);
+    // }
 
     /**
      * Get the validation rules that apply to the request.
@@ -32,7 +32,7 @@ class StoreProjetRequest extends FormRequest
         return [
             'titre' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'image' => ['required', 'image', 'mine:jpeg,png'],
+            'image' => ['required', 'image'],
             'status' => ['required', 'string'],
 
 
