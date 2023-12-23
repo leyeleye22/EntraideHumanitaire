@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Donateur;
+use App\Models\Projet;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,8 +16,10 @@ return new class extends Migration
         Schema::create('donmateriels', function (Blueprint $table) {
             $table->id();
             $table->string('adresse');
-            $table->string('Contact');
-            $table->foreignId('donprojet_id')->constrained()->onUpdate('cascade');
+            $table->string('telephone');
+            // $table->foreignId('donprojet_id')->constrained()->onUpdate('cascade');
+            $table->foreignIdFor(Donateur::class)->constrained()->onUpdate('cascade');
+            $table->foreignIdFor(Projet::class)->constrained()->onUpdate('cascade');
             $table->timestamps();
         });
     }

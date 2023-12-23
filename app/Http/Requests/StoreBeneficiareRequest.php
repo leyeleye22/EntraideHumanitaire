@@ -11,7 +11,7 @@ class StoreBeneficiareRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreBeneficiareRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom_complet' => ['string', 'required'],
+            'email' => ['email', 'required'],
+            'adresse' => ['string', 'required'],
+            'telephone' => ['integer', 'required'],
         ];
     }
 }

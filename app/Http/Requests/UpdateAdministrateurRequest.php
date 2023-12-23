@@ -11,7 +11,7 @@ class UpdateAdministrateurRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateAdministrateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom_complet' => ['required', 'string'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'string'],
         ];
     }
 }

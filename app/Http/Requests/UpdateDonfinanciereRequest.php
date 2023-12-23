@@ -11,7 +11,7 @@ class UpdateDonfinanciereRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateDonfinanciereRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'montant'   => ['integer', 'required'],
+            'methode_paiement' => ['string', 'required'],
+            'projet_id' => ['integer', 'required'],
+
         ];
     }
 }

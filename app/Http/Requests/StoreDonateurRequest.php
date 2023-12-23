@@ -11,7 +11,7 @@ class StoreDonateurRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreDonateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom_complet'=>['string', 'required'],
+            'email'=>['email', 'required'],
+            'telephone'=>['string', 'required'],
         ];
     }
 }

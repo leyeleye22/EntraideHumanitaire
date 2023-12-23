@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+            $table->string('email');
+            // $table->foreignId('user_id')->constrained()->onUpdate('cascade');
             $table->timestamps();
         });
     }

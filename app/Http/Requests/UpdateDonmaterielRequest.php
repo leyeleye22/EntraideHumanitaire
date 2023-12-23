@@ -11,7 +11,7 @@ class UpdateDonmaterielRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateDonmaterielRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'adresse' => ['string', 'required'],
+            'telephone' => ['string', 'required'],
+            'projet_id' => ['integer', 'required'],
+
         ];
     }
 }

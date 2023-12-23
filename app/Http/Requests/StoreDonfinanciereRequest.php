@@ -11,7 +11,7 @@ class StoreDonfinanciereRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class StoreDonfinanciereRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'montant'   => ['integer', 'required'],
+            'methode_paiement' => ['string', 'required'],
         ];
     }
 }

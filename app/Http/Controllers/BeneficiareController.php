@@ -13,7 +13,8 @@ class BeneficiareController extends Controller
      */
     public function index()
     {
-        //
+        $beneficiaire = Beneficiare::all()->paginate(5);
+        return view('', ['beneficiare' => $beneficiaire]);
     }
 
     /**
@@ -21,7 +22,7 @@ class BeneficiareController extends Controller
      */
     public function create()
     {
-        //
+        return view('');
     }
 
     /**
@@ -29,7 +30,8 @@ class BeneficiareController extends Controller
      */
     public function store(StoreBeneficiareRequest $request)
     {
-        //
+        $beneficiaire = Beneficiare::create($request->validated());
+        return to_route('')->with('beneficiaire', '');
     }
 
     /**
@@ -53,7 +55,6 @@ class BeneficiareController extends Controller
      */
     public function update(UpdateBeneficiareRequest $request, Beneficiare $beneficiare)
     {
-        //
     }
 
     /**

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('donateurs', function (Blueprint $table) {
             $table->id();
-            $table->string('nomcomplet');
+            $table->string('nom_complet');
             $table->string('email')->unique();
-            $table->string('numerotelephone');
+            $table->string('telephone');
             $table->timestamps();
         });
     }

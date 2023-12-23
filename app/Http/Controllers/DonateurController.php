@@ -29,7 +29,8 @@ class DonateurController extends Controller
      */
     public function store(StoreDonateurRequest $request)
     {
-        //
+        $donneesDonnateursValide = $request->validated();
+        $donateur= Donateur::create($donneesDonnateursValide);
     }
 
     /**

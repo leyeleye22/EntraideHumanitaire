@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreProjetRequest extends FormRequest
@@ -11,7 +12,14 @@ class StoreProjetRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'administrateur_id' => Auth::user()->id,
+        ]);
     }
 
     /**
@@ -22,7 +30,12 @@ class StoreProjetRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image' => ['required', 'image', 'mine:jpeg,png'],
+            'status' => ['required', 'string'],
+
+
         ];
     }
 }
