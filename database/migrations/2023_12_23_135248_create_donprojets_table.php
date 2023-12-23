@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('donprojets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('donateur_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('projet_id')->constrained()->onUpdate('cascade');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('donmateriels', function (Blueprint $table) {
             $table->id();
+            $table->string('adresse');
+            $table->string('Contact');
+            $table->foreignId('donprojet_id')->constrained()->onUpdate('cascade');
             $table->timestamps();
         });
     }

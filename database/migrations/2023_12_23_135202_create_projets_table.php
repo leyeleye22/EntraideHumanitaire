@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
+            $table->string('description');
+            $table->string('image');
+            $table->enum('status', ['en_cours', 'en_attente', 'termine']);
+            $table->foreignId('administrateur_id')->constrained()->onUpdate('cascade');
             $table->timestamps();
         });
     }

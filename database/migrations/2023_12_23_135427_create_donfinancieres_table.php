@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('donfinancieres', function (Blueprint $table) {
             $table->id();
+            $table->float('montant');
+            $table->string('MethodePaiement');
+            $table->foreignId('donprojet_id')->constrained()->onUpdate('cascade');
             $table->timestamps();
         });
     }
