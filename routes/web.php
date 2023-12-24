@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BeneficiaireController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Administrateur;
+use App\Models\Beneficiare;
 use App\Http\Controllers\ProjetController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//Fast lan
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::resource('beneficiaire', BeneficiaireController::class);
+});
+
 
 Route::get('/ajouter/projet', function () {
     return view('Admin.AjoutProjet');
