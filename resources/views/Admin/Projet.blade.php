@@ -10,8 +10,6 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <div class="min-w-screen min-h-screen bg-gray-100 px-5 py-5">
 
-
-
         <div class="w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10">
             <div class="text-center max-w-xl mx-auto">
                 <h1 class="text-5xl md:text-6xl font-bold mb-5">Projet</h1>
