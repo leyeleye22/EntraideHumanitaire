@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\BeneficiaireController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Administrateur;
+use App\Models\Beneficiare;
+use App\Http\Controllers\ProjetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Fast lan
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::resource('beneficiaire', BeneficiaireController::class);
+});
+
+
 Route::get('/ajouter/projet', function () {
     return view('Admin.AjoutProjet');
 });
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/projet', function () {
-    return view('Admin.Projet');
-});
+// route pour le CRUD des projet ici n'oublie pas de mettre le middleware pour la protégée
+Route::resource('projet', ProjetController::class);
+
 Route::get('admin/connect/association', function () {
     return view('ConnexionAdmin');
 });
