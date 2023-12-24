@@ -40,8 +40,7 @@ class BeneficiaireController extends Controller
      */
     public function store(StoreBeneficiareRequest $request)
     {
-     
-        if( Beneficiare::where('email', $request->validated('email')) )
+        if( Beneficiare::where('email', $request->validated('email'))->exists() )
         {
             return redirect()->back()->with(['error' => 'Cet utilisateur existe déjà', 'beneficiare' => $request->validated()]);
         }
