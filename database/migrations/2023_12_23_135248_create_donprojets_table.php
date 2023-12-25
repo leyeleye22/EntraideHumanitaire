@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('donateur_id')->constrained()->onUpdate('cascade');
             $table->foreignId('projet_id')->constrained()->onUpdate('cascade');
-            $table->boolean('status');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }
