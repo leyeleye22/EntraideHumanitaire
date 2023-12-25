@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeneficiaireController;
+use App\Http\Controllers\DonmaterielController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Administrateur;
 use App\Models\Beneficiare;
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->name('admin.')->group(function() {
     Route::resource('beneficiaire', BeneficiaireController::class);
 });
+Route::post('/donmateriel',[DonmaterielController::class,'store']);
 
 
 Route::get('/ajouter/projet', function () {

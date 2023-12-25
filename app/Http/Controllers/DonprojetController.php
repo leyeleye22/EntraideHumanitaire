@@ -13,7 +13,8 @@ class DonprojetController extends Controller
      */
     public function index()
     {
-        //
+        $dons=Donprojet::paginate(5);
+        return $dons;
     }
 
     /**
@@ -45,7 +46,11 @@ class DonprojetController extends Controller
      */
     public function edit(Donprojet $donprojet)
     {
-        //
+        $donprojet->update([
+            "status"=>1
+        ]);
+        return back()->with('success',"Bravo le beneficiaire du don l'a bien reçu");
+
     }
 
     /**

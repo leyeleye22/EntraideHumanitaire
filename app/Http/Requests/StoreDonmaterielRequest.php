@@ -22,8 +22,12 @@ class StoreDonmaterielRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'nom_complet'=>['string', 'required'],
+            'email'=>['email', 'required'],
             'adresse' => ['string', 'required'],
             'telephone' => ['string', 'required'],
+            'description' => ['string', 'required'],
+            'image' => ['image', 'mimes:gif,png,jpg,jpeg','max:2048'],
         ];
     }
 }

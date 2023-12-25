@@ -29,7 +29,7 @@ class DonfinanciereController extends Controller
      */
     public function store(StoreDonfinanciereRequest $request)
     {
-        //
+        
     }
 
     /**
