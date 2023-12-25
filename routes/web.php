@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/footer', function () {
+    return view('footer');
+});
+
+Route::get('/apropos', function () {
+    return view('apropos.about');
+});
+
 Route::get('/ajouter/projet', function () {
     return view('Admin.AjoutProjet');
 });
@@ -35,6 +43,11 @@ Route::get('/dashboard', function () {
 Route::get('where/don/Materiel/', function () {
     return view('donmateriel');
 });
+
+Route::get('where/don/financier', function () {
+    return view('dontfinancier');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

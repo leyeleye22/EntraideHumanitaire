@@ -36,31 +36,21 @@
 
 
                 <div class="relative">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">Localisation</label>
+                    <label class="text-sm font-bold text-gray-700 tracking-wide">Montant</label>
                     <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        type="text" placeholder="Votre lieu de résidence">
+                        type="number" placeholder="xxx F CFA">
                 </div>
 
-
-                <div class="mt-8 content-center">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">
-                        Description
-                    </label>
-                    <textarea
-                        class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        placeholder="Entrez la description ici">
-                    </textarea>
+                <div class="relative">
+                    <label class="text-sm font-bold text-gray-700 tracking-wide">Méthode</label>
+                    <select name="" id="">
+                        <option value="" default></option>
+                        <option value="">Orange money</option>
+                        <option value="">Wave</option>
+                        <option value="">Free Money</option>
+                        <option value="">Carte bancaire</option>
+                    </select>
                 </div>
-
-                <div class="mt-8 content-center">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">
-                        Image
-                    </label>
-                    <input
-                        class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        type="file" accept="image/*">
-                </div>
-
 
                 <div>
                     <button type="submit"
