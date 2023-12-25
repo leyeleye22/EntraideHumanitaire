@@ -29,6 +29,7 @@
 
 
                     <form action="/login" class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto" method="POST">
+                        @csrf
                         <div class="pb-2 pt-4">
                             <input type="email" name="email" id="email" placeholder="Email"
                                 class="block w-full p-4 text-lg rounded-sm bg-green">

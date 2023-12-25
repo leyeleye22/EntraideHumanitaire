@@ -24,6 +24,7 @@
 </style>
 <div class="min-w-screen min-h-screen bg-gray-100 px-5 py-5">
 
+<<<<<<< HEAD
 
 
     <div class="w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10">
@@ -54,6 +55,12 @@
                 <h2 class="text-center font-bold uppercase mb-2">Réaménagement rurale</h2>
                 <p class="text-center text-gray-700">Cette action a pour vocation de contribuer à la construction d'une
                     mosquée en encourageant la cohésion sociale et la partage des valeurs.</p>
+=======
+        <div class="w-full mx-auto bg-white px-5 py-10 text-gray-600 mb-10">
+            <div class="text-center max-w-xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-5">Projet</h1>
+                <h3 class="text-xl font-medium mb-10">Listes des projets </h3>
+>>>>>>> origin
             </div>
 
             <!-- Bouton -->
