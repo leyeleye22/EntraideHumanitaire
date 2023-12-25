@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DonateurController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,9 @@ Route::get('admin/connect/association', function () {
 });
 Route::get('admin/acceuil', function () {
     return view('Admin.AcceuilAdmin');
+});
+Route::controller(DonateurController::class)->group(function () {
+    Route::post('/donprojet/materiel', 'donmateriel');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');

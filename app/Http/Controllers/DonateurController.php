@@ -5,15 +5,32 @@ namespace App\Http\Controllers;
 use App\Models\Donateur;
 use App\Http\Requests\StoreDonateurRequest;
 use App\Http\Requests\UpdateDonateurRequest;
+use App\Models\DonMateriel;
+use Illuminate\Http\Client\Request;
 
 class DonateurController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function donmateriel(Request $request)
     {
-        //
+        $donneesDonnateursValide = $request->validated();
+        $donateur = new Donateur();
+
+        $donateur->nom_complet = $donneesDonnateursValide->nomcomplet;
+        $donateur->email = $donneesDonnateursValide->email;
+        $donateur->telephone = $donneesDonnateursValide->telephone;
+        if ($donateur->save()) {
+            $donMAteriel = new DonMateriel();
+            $donMAteriel->adresse=$donneesDonnateursValide->adresse;
+            $donMAteriel->telephone=$donneesDonnateursValide->telephone;
+            $donMAteriel->donateur_id=$donateur->id;
+            $donMAteriel->projet_id=$donneesDonnateursValide->projetId;
+            if($donMAteriel->save()){
+                
+            }
+        }
     }
 
     /**
@@ -30,7 +47,7 @@ class DonateurController extends Controller
     public function store(StoreDonateurRequest $request)
     {
         $donneesDonnateursValide = $request->validated();
-        $donateur= Donateur::create($donneesDonnateursValide);
+        $donateur = Donateur::create($donneesDonnateursValide);
     }
 
     /**

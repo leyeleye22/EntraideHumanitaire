@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('adresse');
             $table->string('telephone');
-            // $table->foreignId('donprojet_id')->constrained()->onUpdate('cascade');
             $table->foreignIdFor(Donateur::class)->constrained()->onUpdate('cascade');
             $table->foreignIdFor(Projet::class)->constrained()->onUpdate('cascade');
             $table->timestamps();
