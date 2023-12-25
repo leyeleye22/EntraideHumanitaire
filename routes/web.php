@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Fast lan
-Route::prefix('admin')->name('admin.')->group(function() {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('beneficiaire', BeneficiaireController::class);
+    Route::resource('projet', ProjetController::class);
 });
 
 
@@ -38,8 +39,8 @@ Route::get('/ajouter/projet', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/projet',[ProjetController::class,'indexprojet']);
 // route pour le CRUD des projet ici n'oublie pas de mettre le middleware pour la protégée
-Route::resource('projet', ProjetController::class);
 
 Route::get('admin/connect/association', function () {
     return view('ConnexionAdmin');

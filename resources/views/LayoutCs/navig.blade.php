@@ -30,7 +30,7 @@
             <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 dark-mode:focus:bg-green-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-green-200 md:mt-0 md:ml-4 hover:text-green-900 focus:text-green-900 hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline"
                 href="/apropos">A propos de nous</a>
             <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 dark-mode:focus:bg-green-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-green-200 md:mt-0 md:ml-4 hover:text-green-900 focus:text-green-900 hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline"
-                href="/projet">Projet</a>
+                href="projet">Projet</a>
             <div @click.away="open = false" class="relative" x-data="{ open: true }">
                 <button @click="open = !open"
                     class="flex flex-row text-green-900 bg-green-200 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-green-600 dark-mode:hover:bg-green-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-green-900 focus:text-green-900 hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline">

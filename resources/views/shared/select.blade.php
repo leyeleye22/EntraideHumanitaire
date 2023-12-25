@@ -9,13 +9,17 @@
 @endphp
 <div @class(['form-group', $class])">
     <label for="{{ $name }}"> {{ $label }} </label>
-    
-    <select name="{{ $name }}[]" id="{{ $name }}"   class="form-select " {{ $multiple }} >
+
+    <select name="{{ $name }}[]" id="{{ $name }}" class="form-select ">
         @foreach ($values as $key => $val)
-            <option @selected($value->contains($key)) value="{{ $key }}"> {{ $val }} </option>
+            {{-- <option @selected($value->contains($key)) value="{{ $key }}"> {{ $val }} </option> --}}
+
+            <option {{ in_array($key, (array) $value) ? 'selected' : '' }} value="{{ $key }}">
+                {{ $val }}
+            </option>
         @endforeach
     </select>
-   
+
 
     @error($name)
         <div class="invalid-feedback">
