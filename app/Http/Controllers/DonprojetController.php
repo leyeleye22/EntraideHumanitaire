@@ -46,19 +46,19 @@ class DonprojetController extends Controller
      */
     public function edit(Donprojet $donprojet)
     {
-        $donprojet->update([
-            "status"=>1
-        ]);
-        return back()->with('success',"Bravo le beneficiaire du don l'a bien reçu");
+       
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDonprojetRequest $request, Donprojet $donprojet)
+    public function update(Donprojet $donprojet)
     {
-        //
+        $donprojet->update([
+            "status"=>1
+        ]);
+        return back()->with('success',"Bravo le beneficiaire du don l'a bien reçu");
     }
 
     /**

@@ -25,7 +25,7 @@ class StoreDonmaterielRequest extends FormRequest
             'nom_complet'=>['string', 'required'],
             'email'=>['email', 'required'],
             'adresse' => ['string', 'required'],
-            'telephone' => ['string', 'required'],
+            'telephone' => ['numeric', 'regex:/^7+[05768]{1}+[0-9]{7}$/'],
             'description' => ['string', 'required'],
             'image' => ['image', 'mimes:gif,png,jpg,jpeg','max:2048'],
         ];

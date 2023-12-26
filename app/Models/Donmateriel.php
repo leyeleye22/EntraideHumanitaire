@@ -19,8 +19,13 @@ class DonMateriel extends Model
      * @var relationship
      */
 
-     public function donateurs(): BelongsToMany
+     public function donateur()
      {
-         return $this->belongsToMany(Projet::class);
+         return $this->belongsTo(Donateur::class);
      }
+     public function projet()
+     {
+         return $this->belongsTo(Projet::class);
+     }
+
 }

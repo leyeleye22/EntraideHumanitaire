@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeneficiaireController;
 use App\Http\Controllers\DonmaterielController;
+use App\Http\Controllers\DonprojetController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Administrateur;
 use App\Models\Beneficiare;
@@ -25,6 +26,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('projet', ProjetController::class);
 });
 Route::post('/donmateriel',[DonmaterielController::class,'store']);
+Route::get('/dons',[DonprojetController::class,'index']);
+Route::get('/dons_transmis/{donprojet}',[DonprojetController::class,'update']);
 
 
 Route::get('/footer', function () {
