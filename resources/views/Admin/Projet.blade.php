@@ -70,7 +70,7 @@
             </div>
 
                 <a
-                href="where/don/Materiel/1"  class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
+                href="where/don/Materiel/2"  class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
                     Faire un don
                 </a>
         </div>

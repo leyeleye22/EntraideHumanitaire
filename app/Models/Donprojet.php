@@ -13,6 +13,7 @@ class Donprojet extends Model
     /**
      * @var relationship
      */
+    protected $guarded=[];
 
     public function donateurs(): BelongsToMany
     {

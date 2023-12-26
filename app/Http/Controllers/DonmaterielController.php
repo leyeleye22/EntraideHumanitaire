@@ -24,7 +24,7 @@ class DonmaterielController extends Controller
      */
     public function create(Projet $projet)
     {
-        return view('donmateriel',compact('projet'));
+        return view('donmateriel', compact('projet'));
     }
 
     /**
@@ -32,6 +32,7 @@ class DonmaterielController extends Controller
      */
     public function store(StoreDonmaterielRequest $request)
     {
+        // dd($request);
         //cree un donnateur dans la base de données 
         $donateur = Donateur::create([
             'nom_complet' => $request->nom_complet,
@@ -44,6 +45,8 @@ class DonmaterielController extends Controller
 
             $image = $request->file('image')->store('image', 'public');
             $donmateriel = Donmateriel::create([
+                'adresse' => $request->adresse,
+                'telephone' => $request->telephone,
                 'description' => $request->description,
                 'imgage' => $image,
                 'donateur_id' => $donateur->id,
@@ -56,6 +59,7 @@ class DonmaterielController extends Controller
             'donateur_id' => $donateur->id,
             'projet_id' => $request->projet_id
         ]);
+        return back()->with('success', "Ajout du don reuissi");
     }
 
     /**

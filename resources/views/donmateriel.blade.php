@@ -14,7 +14,8 @@
             </div>
 
 
-            <form class="mt-8 space-y-6" action="/donmateriel" method="POST">
+            <form class="mt-8 space-y-6" action="/donmateriel" method="POST" enctype="multipart/form-data">
+                @csrf
                 <input type="hidden" name="remember" value="true">
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Nom</label>
