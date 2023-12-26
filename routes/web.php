@@ -25,8 +25,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('beneficiaire', BeneficiaireController::class);
     Route::resource('projet', ProjetController::class);
 });
+//ajouter un don materiel
 Route::post('/donmateriel',[DonmaterielController::class,'store']);
+//afficher les dons projets 
 Route::get('/dons',[DonprojetController::class,'index']);
+//mettre a jour le status d'un don projet pour indiquer que son beneficiaire l'a bien reçu
 Route::get('/dons_transmis/{donprojet}',[DonprojetController::class,'update']);
 
 
