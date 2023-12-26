@@ -14,30 +14,30 @@
             </div>
 
 
-            <form class="mt-8 space-y-6" action="#" method="POST">
+            <form class="mt-8 space-y-6" action="/donmateriel" method="POST">
                 <input type="hidden" name="remember" value="true">
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Nom</label>
-                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input name="nom_complet" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="text" placeholder="Votre nom">
                 </div>
 
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Email</label>
-                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input name="email" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="email" placeholder="mail@gmail.com">
                 </div>
 
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Téléphone</label>
-                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input name="telephone" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="number" placeholder="+221 77 777 77 77">
                 </div>
 
 
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Localisation</label>
-                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input name="adresse" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="text" placeholder="Votre lieu de résidence">
                 </div>
 
@@ -47,7 +47,7 @@
                         Description
                     </label>
                     <textarea
-                        class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                     name="description"   class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         placeholder="Entrez la description ici">
                     </textarea>
                 </div>
@@ -58,11 +58,12 @@
                     </label>
                     <input
                         class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        type="file" accept="image/*">
+                        type="file" name="image" accept="image/*">
                 </div>
 
 
                 <div>
+                    <input type="hidden" name="projet_id" value="{{$projet->id}}">
                     <button type="submit"
                         class="w-full flex justify-center bg-green-500 text-gray-100 p-4  rounded-full tracking-wide
                                 font-semibold  focus:outline-none focus:shadow-outline hover:bg-green-600 shadow-lg cursor-pointer transition ease-in duration-300">

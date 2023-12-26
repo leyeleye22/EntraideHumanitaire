@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Donmateriel;
 use App\Http\Requests\StoreDonmaterielRequest;
 use App\Http\Requests\UpdateDonmaterielRequest;
+use App\Models\Projet;
 
 class DonmaterielController extends Controller
 {
@@ -19,9 +20,9 @@ class DonmaterielController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Projet $projet)
     {
-        //
+        return view('donmateriel',compact('projet'));
     }
 
     /**

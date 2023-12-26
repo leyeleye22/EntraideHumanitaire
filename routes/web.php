@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeneficiaireController;
+use App\Http\Controllers\DonmaterielController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Administrateur;
 use App\Models\Beneficiare;
@@ -51,13 +52,12 @@ Route::get('admin/acceuil', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('where/don/Materiel/', function () {
-    return view('donmateriel');
-});
+Route::get('where/don/Materiel/{projet}',[DonmaterielController::class,'create']);
 
 Route::get('where/don/financier', function () {
     return view('dontfinancier');
 });
+Route::post('donmateriel',[DonmaterielController::class , "store"]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

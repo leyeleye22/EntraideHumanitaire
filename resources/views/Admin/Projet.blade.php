@@ -50,14 +50,12 @@
                     mosquée en encourageant la cohésion sociale et la partage des valeurs.</p>
             </div>
 
-            <!-- Bouton -->
-            <div class="w-full">
-                <button
-                    class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
+            {{-- lien pour faire un don  --}}
+                <a 
+                   href="where/don/Materiel/1" class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
                     Faire un don
-                </button>
+                </a>
 
-            </div>
         </div>
         <div
             class="w-full md:w-1/3 md:max-w-none bg-white px-8 md:px-10 py-8 md:py-10 mb-3 mx-auto md:my-6 rounded-md shadow-lg shadow-gray-600 md:flex md:flex-col">
@@ -71,14 +69,10 @@
                     mosquée en encourageant la cohésion sociale et la partage des valeurs.</p>
             </div>
 
-            <!-- Bouton -->
-            <div class="w-full">
-                <button
-                    class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
+                <a
+                href="where/don/Materiel/1"  class="font-bold bg-green-600 hover:bg-green-700 text-white rounded-md px-10 py-2 transition-colors w-full">
                     Faire un don
-                </button>
-
-            </div>
+                </a>
         </div>
     </div>
 
@@ -107,9 +101,9 @@
 
             </div>
         </div> @endforeach
-     
-        </div>
+             
+                </div>
 
-        </div>
-        </div>
+                </div>
+                </div>
 @endsection
