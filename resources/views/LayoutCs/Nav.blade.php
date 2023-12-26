@@ -17,15 +17,15 @@
     @section('content')
         <br>
         @yield('nav')
-        <section class="bg-cover bg-center py-32 w-full" style="background-image: url('{{ asset('images/1.jpg') }}');">
+        <section class="bg-cover bg-center py-32 w-full" style="background-image: url('{{ asset('images/1703341738105.jpg') }}')">
             <div class="container mx-auto text-left text-white">
                 <div class="flex items-center">
                     <div class="w-1/2">
-                        <h1 class="text-5xl font-medium mb-6">Welcome to My Agency</h1>
-                        <p class="text-xl mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
-                            euismod odio, gravida pellentesque urna varius vitae.</p>
-                        <a href="#"
-                            class="bg-green-500 text-white py-4 px-12 rounded-full hover:bg-green-600">Demo</a>
+                        <h4 class="text-5xl font-medium mb-6" style="margin-left: 20px; color:white">Bienvenue sur Entraide Humanitaire</h4>
+                        <p class="text-xl mb-12" style="margin-left: 20px; font-weight:bold; color:white">Nous sommes une association a but non lucrative et solidaire
+                            qui <br>vous propose des actions pour améliorer la situation des personnes vulnérables.</p>
+                        <!-- <a href="#"
+                            class="bg-green-500 text-white py-4 px-12 rounded-full hover:bg-green-600">Demo</a> -->
                     </div>
 
                 </div>

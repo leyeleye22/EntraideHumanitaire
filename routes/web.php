@@ -20,11 +20,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Fast lan
-Route::prefix('admin')->name('admin.')->group(function() {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('beneficiaire', BeneficiaireController::class);
+    Route::resource('projet', ProjetController::class);
 });
 Route::post('/donmateriel',[DonmaterielController::class,'store']);
 
+
+Route::get('/footer', function () {
+    return view('footer');
+});
+
+Route::get('/apropos', function () {
+    return view('apropos.about');
+});
 
 Route::get('/ajouter/projet', function () {
     return view('Admin.AjoutProjet');
@@ -32,8 +41,8 @@ Route::get('/ajouter/projet', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/projet',[ProjetController::class,'indexprojet']);
 // route pour le CRUD des projet ici n'oublie pas de mettre le middleware pour la protégée
-Route::resource('projet', ProjetController::class);
 
 Route::get('admin/connect/association', function () {
     return view('ConnexionAdmin');
@@ -44,9 +53,13 @@ Route::get('admin/acceuil', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('where/don/Materiel/', function () {
-    return view('donmateriel');
+Route::get('where/don/Materiel/{projet}',[DonmaterielController::class,'create']);
+
+Route::get('where/don/financier', function () {
+    return view('dontfinancier');
 });
+Route::post('donmateriel',[DonmaterielController::class , "store"]);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

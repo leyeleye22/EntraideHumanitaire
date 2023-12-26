@@ -14,56 +14,45 @@
             </div>
 
 
-            <form class="mt-8 space-y-6" action="/donmateriel" method="POST">
+            <form class="mt-8 space-y-6" action="#" method="POST">
                 <input type="hidden" name="remember" value="true">
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Nom</label>
-                    <input name="nom_complet" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="text" placeholder="Votre nom">
                 </div>
 
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Email</label>
-                    <input name="email" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="email" placeholder="mail@gmail.com">
                 </div>
 
                 <div class="relative">
                     <label class="text-sm font-bold text-gray-700 tracking-wide">Téléphone</label>
-                    <input name="telephone" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
                         type="number" placeholder="+221 77 777 77 77">
                 </div>
 
 
                 <div class="relative">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">Localisation</label>
-                    <input name="adresse" class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        type="text" placeholder="Votre lieu de résidence">
+                    <label class="text-sm font-bold text-gray-700 tracking-wide">Montant</label>
+                    <input class="w-full text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
+                        type="number" placeholder="xxx F CFA">
                 </div>
 
-
-                <div class="mt-8 content-center">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">
-                        Description
-                    </label>
-                    <textarea
-                     name="description"   class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        placeholder="Entrez la description ici">
-                    </textarea>
+                <div class="relative">
+                    <label class="text-sm font-bold text-gray-700 tracking-wide">Méthode</label>
+                    <select name="" id="">
+                        <option value="" default></option>
+                        <option value="">Orange money</option>
+                        <option value="">Wave</option>
+                        <option value="">Free Money</option>
+                        <option value="">Carte bancaire</option>
+                    </select>
                 </div>
-
-                <div class="mt-8 content-center">
-                    <label class="text-sm font-bold text-gray-700 tracking-wide">
-                        Image
-                    </label>
-                    <input
-                        class="w-full content-center text-base py-2 border-b border-gray-300 focus:outline-none focus:border-green-500"
-                        type="file" name="image" accept="image/*">
-                </div>
-
 
                 <div>
-                    <input type="hidden" name="projet_id" value="{{$projet->id}}">
                     <button type="submit"
                         class="w-full flex justify-center bg-green-500 text-gray-100 p-4  rounded-full tracking-wide
                                 font-semibold  focus:outline-none focus:shadow-outline hover:bg-green-600 shadow-lg cursor-pointer transition ease-in duration-300">

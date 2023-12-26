@@ -15,8 +15,13 @@ class ProjetController extends Controller
      */
     public function index()
     {
-        $projets=Projet::all();
-        return view('Admin.projet', compact('projets'));
+        $projets = Projet::paginate(5);
+        return view('Admin.projet.index', compact('projets'));
+    }
+    public function indexprojet()
+    {
+        $projets = Projet::paginate(5);
+        return view('Admin.Projet', compact('projets'));
     }
 
     /**
@@ -24,8 +29,8 @@ class ProjetController extends Controller
      */
     public function create()
     {
-        $projet=new Projet();
-        return view('Admin.AjouterProjet', compact('projet'));
+        $projet = new Projet();
+        return view('Admin.projet.form', compact('projet'));
     }
 
     /**
@@ -34,19 +39,18 @@ class ProjetController extends Controller
     public function store(StoreProjetRequest $request)
     {
 
-        
-        $projetValider=$request->validated();
-           $projetValider['user_id']=Auth::user()->id;
-           $image= $projetValider['image'];
-           if($image !== null && !$image->getError()){
-            $projetValider['image']= $image->store('image', 'public');
-           }
-        // dd($projetValider);
-        if($projet=Projet::create($projetValider)){
-            return back()->with('message', 'Projet enregistré avec succès');
+
+        $projetValider = $request->validated();
+        $projetValider['user_id'] = auth()->user()->id;
+        $image = $projetValider['image'];
+        if ($image !== null && !$image->getError()) {
+            $projetValider['image'] = $image->store('image', 'public');
         }
-          
-           
+
+
+        if ($projet = Projet::create($projetValider)) {
+            return redirect()->route('admin.projet.index')->with('success', 'Projet enregistré avec succès');
+        }
     }
 
     /**
@@ -62,7 +66,7 @@ class ProjetController extends Controller
      */
     public function edit(Projet $projet)
     {
-        return view('Admin.AjouterProjet', compact('projet'));
+        return view('Admin.projet.form', compact('projet'));
     }
 
     /**
@@ -72,24 +76,19 @@ class ProjetController extends Controller
     {
 
 
-        $projetValider=$request->validated();
-        $projetValider['user_id']=Auth::user()->id;
-        $image= $projetValider['image'];
-        if($image !== null && !$image->getError()){
+        $projetValider = $request->validated();
+        $projetValider['user_id'] = Auth::user()->id;
+        $image = $projetValider['image'];
+        if ($image !== null && !$image->getError()) {
             if ($projet->image) {
                 Storage::disk('public')->delete($projet->image);
             }
-         $projetValider['image']= $image->store('image', 'public');
+            $projetValider['image'] = $image->store('image', 'public');
         }
-     // dd($projetValider);
-     if($projet=Projet::create($projetValider)){
-         return back()->with('message', 'Projet modifié avec succès');
-     }
-
-
-
-
-       
+        // dd($projetValider);
+        if ($projet->update($projetValider)) {
+            return redirect()->route('admin.projet.index')->with('success', 'Projet modifié avec succès');
+        }
     }
 
     /**
@@ -97,9 +96,8 @@ class ProjetController extends Controller
      */
     public function destroy(Projet $projet)
     {
-        if($projet->delete()){
-            return redirect()->route('projet.index')->with('message', 'L\'projet a été supprimé');
-
+        if ($projet->delete()) {
+            return redirect()->route('admin.projet.index')->with('success', 'Le projet a été supprimé');
         }
     }
 }
